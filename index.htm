@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form with Overlay Image</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #2e2e2e;
+      font-family: sans-serif;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 50px auto;
+      display: flex;
+      background: url('./img/building.jpg') no-repeat center center/cover;
+      border-radius: 20px;
+      overflow: visible;
+      position: relative;
+      padding: 50px;
+    }
+
+    .form-wrapper {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      flex: 1;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #3a4a45;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 15px 25px;
+      background: #222;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .image-overlay {
+      position: absolute;
+      right: -50px;
+      bottom: 0;
+      z-index: 2;
+    }
+
+    .image-overlay img {
+      max-height: 100%;
+      height: 500px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 20px;
+      }
+      .image-overlay {
+        position: static;
+        margin-top: 20px;
+        text-align: center;
+      }
+      .image-overlay img {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-wrapper">
+      <h1>Consectetur<br />sed do eiusmod</h1>
+      <form>
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="E-mail" />
+        <div class="checkbox">
+          <input type="checkbox" id="privacy" />
+          <label for="privacy">I accept Privacy policy</label>
+        </div>
+        <button type="submit">SUBMIT FORM</button>
+      </form>
+    </div>
+    <div class="image-overlay">
+      <img src="/img/woman2.jpg" alt="Overlay Woman"/>
+    </div>
+  </div>
+</body>
+</html>
